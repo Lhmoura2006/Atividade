@@ -1,0 +1,24 @@
+pessoas = []
+qtd = int(input("Quantas pessoas deseja cadastrar? "))
+
+for i in range(qtd):
+    nome = input("Digite o nome: ")
+    idade = int(input("Digite a idade: "))
+    peso = float(input("Digite o peso (kg): "))
+    altura = float(input("Digite a altura (m): "))
+
+    imc = peso / (altura ** 2)
+    # Classificação do IMC (simplificada)
+    if imc < 18.5:
+        classificacao = "Baixo peso (Grau I)"
+    elif imc < 25:
+        classificacao = "Peso adequado"
+    elif imc < 30:
+        classificacao = "Sobrepeso"
+    else:
+        classificacao = "Obesidade"
+    pessoas.append([nome, idade, imc, classificacao])
+
+print("\n Resultados ")
+for p in pessoas:
+    print(f"{p[0]} - {p[1]} anos - {p[3]}")
